@@ -21,7 +21,12 @@ RUN sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="fletcherm"/g' .zshrc
 # Install and configure anaconda
 RUN wget https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
 RUN bash Anaconda3-2020.11-Linux-x86_64.sh -b
-# The below line does not work yet - need to initialize anaconda somehow
 RUN echo "source /home/doby/anaconda3/bin/activate" >> .zshrc
+
+#RUN git clone 
+
+# Conda environment
+RUN /home/doby/anaconda3/condabin/conda env create -f environment.yml
+RUN echo "conda activate env" >> .zshrc
 
 CMD zsh
