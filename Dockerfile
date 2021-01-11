@@ -30,8 +30,7 @@ RUN git clone https://github.com/JaaLynch/doby.git
 RUN /home/doby/anaconda3/condabin/conda env create -f /home/doby/doby/environment.yml
 RUN echo "conda activate env" >> .zshrc
 
-# Configure jupyter
-#RUN jupyter notebook --generate-config
-
+# Expose a port for jupyter notebook
+EXPOSE 8888
 
 CMD zsh
