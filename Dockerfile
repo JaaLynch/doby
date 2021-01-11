@@ -31,7 +31,7 @@ RUN /home/doby/anaconda3/condabin/conda env create -f /home/doby/doby/environmen
 RUN echo "conda activate env" >> .zshrc
 
 # Configure jupyter
-RUN jupyter notebook --generate-config
+#RUN jupyter notebook --generate-config
 
 
 CMD zsh
