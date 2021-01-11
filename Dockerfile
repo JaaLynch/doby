@@ -23,10 +23,15 @@ RUN wget https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh
 RUN bash Anaconda3-2020.11-Linux-x86_64.sh -b
 RUN echo "source /home/doby/anaconda3/bin/activate" >> .zshrc
 
-#RUN git clone 
+# Get environment.yml
+RUN git clone https://github.com/JaaLynch/doby.git
 
 # Conda environment
-RUN /home/doby/anaconda3/condabin/conda env create -f environment.yml
+RUN /home/doby/anaconda3/condabin/conda env create -f /home/doby/doby/environment.yml
 RUN echo "conda activate env" >> .zshrc
+
+# Configure jupyter
+RUN jupyter notebook --generate-config
+
 
 CMD zsh
