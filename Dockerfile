@@ -4,7 +4,7 @@ FROM ubuntu:18.04
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y \
-    sudo nano htop tree git curl wget zsh
+    sudo nano htop tree git curl wget zsh snap
 
 # Set the default shell to zsh
 RUN chsh -s $(which zsh)
