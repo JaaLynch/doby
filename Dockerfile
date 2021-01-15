@@ -30,6 +30,10 @@ RUN git clone https://github.com/JaaLynch/doby.git
 RUN /home/doby/anaconda3/condabin/conda env create -f /home/doby/doby/environment.yml
 RUN echo "conda activate env" >> .zshrc
 
+# Configure Git
+RUN echo "git config --global user.name 'jaalynch'" >> .zshrc
+RUN echo "git config --global user.email 'jaalynch@gmail.com'" >> .zshrc
+
 # Expose a port for jupyter notebook
 EXPOSE 8888
 
